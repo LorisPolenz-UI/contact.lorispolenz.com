@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+ 
+ * {
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
+ }
+ 
+#body {
+     display: grid;
+     place-items: center;
+     height: 100vh;
+
+
+     background: url('http://cdn.lorispolenz.com/backgroundLinkPage.jpg') no-repeat center center fixed; 
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+}
+
+#msg {
+    background-color: black;
+    background-size: cover;
+}
+
+
+
+/*Style for footer*/
+footer {
+    color: whitesmoke;
+    align-self: flex-end;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+footer h3 {
+    font-size: 2rem;
+}
+
+footer h2 {
+    font-size: 3rem;
+}
