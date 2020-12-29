@@ -1,16 +1,28 @@
-function script () {
-    var data = getDataFromForm();
 
-    console.log(validateInputs(data));
+$(document).ready(function() {
+    $(document).on('submit', 'contactForm', function() {
+      
+        var data = getDataFromForm();
 
-    if (validateInputs(data) != undefined) {
-        var data = escapeHtml(data);
+        console.log(validateInputs(data));
+        console.log("here")
+    
+        if (validateInputs(data) != 'undefined') {
+            console.log("here")
+            var clearedData = escapeHtml(data);
+            console.log("clearedData" + clearedData);
+    
+            var mail = createEmail(clearedData);
+    
+            console.log("Mail: " + mail)
+    
+            postReqest(mail);
+        }
 
 
-    }
-
-
-}
+      return false;
+     });
+});
 
 
 
@@ -70,7 +82,9 @@ function escapeHtml(inputs) {
             "'": '&#039;'
         };
 
-        clearedInputs.push(text.replace(/[&<>"']/g, function (m) { return map[m]; }));
+        text.replace(/[&<>"']/g, function (m) { 
+            clearedInputs.push(map[m]); 
+        });
     }
 
     return clearedInputs;
@@ -78,5 +92,50 @@ function escapeHtml(inputs) {
 
 
 function createEmail (inputs) {
+
+    console.log(inputs);
+
+    var mail = 
+    `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hallo Loris</h1>
     
+        <h2>Du hast einen neue Nachricht von ${inputs[0]}:${inputs[1]}. </h2>
+    
+        <h3>${inputs[2]}</h3>
+        <h4>${inputs[3]}</h4>
+        ${inputs}
+    </body>
+    </html>`;
+
+    return mail;
+}
+
+function postReqest (mail) {
+    jQuery.ajax({
+        type: "POST",
+        url: './php/sendMail.php',
+        dataType: 'JSON',
+        data: { functionname: 'sendMail', arguments: mail},
+        success: function (obj, textstatus) {
+          if (!('error' in obj)) {
+            yourVariable = obj.result;
+          }
+          else {
+            console.log("Error" + obj.error);
+          }
+        }
+      });
+      console.log("dome!");
 }
