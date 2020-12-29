@@ -26,6 +26,46 @@
 }
 
 
+/*Format the form*/
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: whitesmoke;
+    font-size: 2rem;
+}
+
+input, textarea {
+    height: 60px;
+    width: 600px;
+
+    margin: 10px;
+
+    border: 2px solid whitesmoke;
+    background: none;
+
+    font-size: 1.5rem;
+    color: whitesmoke;
+    padding: 0.1rem 1rem ;
+}
+
+#inputMessage {
+    height: 200px;
+    display: flex;
+}
+
+#inputSubmit {
+    margin-left: 30px;
+}
+
+input:focus, textarea:focus, input:hover, textarea:hover {
+    background-color: whitesmoke;
+    color: black;
+    font-weight: 700;
+}
+
 
 /*Style for footer*/
 footer {
