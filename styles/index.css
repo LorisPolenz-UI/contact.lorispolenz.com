@@ -61,7 +61,8 @@ input, textarea {
 }
 
 input:focus, textarea:focus, input:hover, textarea:hover {
-    background-color: whitesmoke;
+    background-color: rgba(245, 245, 245, 0.51);
+
     color: black;
     font-weight: 700;
 }
