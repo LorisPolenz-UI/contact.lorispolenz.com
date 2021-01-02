@@ -21,18 +21,18 @@
         <main>
             <form id="contactForm" action="javascript:post()" method="POST">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="inputName" maxlength="100">
+                <input required type="text" name="name" id="inputName" maxlength="100">
 
                 <label for="mail">E-Mail</label>
-                <input type="email" name="mail" id="inputMail" maxlength="150">
+                <input required type="email" name="mail" id="inputMail" maxlength="150">
 
                 <label for="subject">Betreff</label>
-                <input type="text" name="subject" id="inputSubject" maxlength="150">
+                <input required type="text" name="subject" id="inputSubject" maxlength="150">
 
                 <label for="message">Nachricht</label>
                 <textarea name="message" id="inputMessage" cols="30" rows="10" maxlength="1000"></textarea>
 
-                <input type="submit" value="Submit" id="inputSubmit">
+                <input required type="submit" value="Submit" id="inputSubmit">
             </form>
         </main>
     

@@ -5,7 +5,7 @@ function post () {
     jQuery.ajax({
         type: "POST",
         headers: "",
-        url: 'http://193.23.127.5:3099/sendMail',
+        url: 'http://localhost:3099/sendMail',
         dataType: 'JSON',
         data: {
             "name": data[0],
@@ -15,14 +15,12 @@ function post () {
         }
     })
     .then(() => {
-        console.log("Success!" + createEmail(data))
+        console.log("Success!")
     })
     .catch((err) => {
         console.error(err)
     })
 }
-
-
 
 
 

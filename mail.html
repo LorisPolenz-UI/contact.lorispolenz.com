@@ -4,18 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+        
+        * {
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             display: flex;
             flex-direction: column;
         }
+
+        #message {
+            color: rgba(0, 0, 0, 0.537);
+            margin-top: 2rem;
+        }
+
+        h1, h2, h3, h4 {
+            margin-left: 1rem;
+            margin-top: 1rem;
+        }
     </style>
 </head>
 <body>
-    <h1>Hallo Loris</h1>
+    <h1>Hi Loris</h1>
+    <h2>New message from ${name}. </h2>
+    <h2>Mail: ${mail}</h2>
 
-    <h2>Du hast einen neue Nachricht von ${name}:${mail}. </h2>
-
-    <h3>${subject}</h3>
-    <h4>${message}</h4>
+    <div id="message">
+        <h2>${subject}</h2>
+        <h3>${message}</h3>
+    </div>
 </body>
 </html>
